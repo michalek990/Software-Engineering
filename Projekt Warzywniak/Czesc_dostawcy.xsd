@@ -1,0 +1,65 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="formularz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="klient">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="imie"/>
+              <xs:element type="xs:string" name="nazwisko"/>
+              <xs:element name="adres">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="miasto"/>
+                    <xs:element type="xs:string" name="ulica"/>
+                    <xs:element type="xs:string" name="numer_domu"/>
+                    <xs:element type="xs:string" name="numer_lokalu"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:int" name="telefon"/>
+              <xs:element type="xs:string" name="adres_email"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="towar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="nr_dokumentu"/>
+              <xs:element type="xs:string" name="nazwa"/>
+              <xs:element type="xs:byte" name="powod_zwrotu"/>
+              <xs:element type="xs:byte" name="cena"/>   
+              <xs:element  name="ilosc">
+                 <xs:simpleType>
+                   <xs:restriction base = "xs:int">
+                     <xs:maxExclusive value="10"></xs:maxExclusive>
+                   </xs:restriction>
+                 </xs:simpleType>
+              </xs:element>   
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dane_zwrot">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="nr_rachunku"/>
+              <xs:element type="xs:string" name="imie"/>
+              <xs:element type="xs:string" name="nazwisko"/>
+              <xs:element name="adres">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="miasto"/>
+                    <xs:element type="xs:string" name="ulica"/>
+                    <xs:element type="xs:string" name="numer_domu"/>
+                    <xs:element type="xs:string" name="numer_lokalu"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:date" name="data"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

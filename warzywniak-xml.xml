@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="lab4_1.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<formularz>
+   <klient>
+      <imie>Jan</imie>
+      <nazwisko>Nowak</nazwisko>
+      <adres>
+         <miasto>radzyn podlaski</miasto>
+         <ulica >warszawska</ulica>
+         <numer_domu >45</numer_domu>
+         <numer_lokalu >34</numer_lokalu>
+      </adres>
+      <telefon>123456790</telefon>
+      <adres_email >dasdas@gmail.com</adres_email>
+   </klient>
+   <towar>
+      <nr_paragonu>234123523563453453</nr_paragonu>
+      <waga>3</waga>
+      <nazwa>dasd</nazwa>
+      <powod_zwrotu>zepsute owoce</powod_zwrotu>
+      <cena>12.5</cena>
+	  <ilosc>9</ilosc>
+   </towar>
+   <dane_zwrot>
+      <nr_zwrotu>123456</nr_zwrotu>
+      <imie>Jan</imie>
+      <nazwisko>Nowak</nazwisko>
+      <adres>
+         <miasto>radzyn podlaski</miasto>
+         <ulica >warszawska</ulica>
+         <numer_domu >4</numer_domu>
+         <numer_lokalu >3</numer_lokalu>
+      </adres>
+      <data>2000-12-23</data>
+   </dane_zwrot>
+</formularz>

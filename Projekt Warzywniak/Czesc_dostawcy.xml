@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="lab4_1.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<formularz>
+   <klient>
+      <imie>Jan</imie>
+      <nazwisko />
+      <adres>
+         <miasto />
+         <ulica />
+         <numer_domu />
+         <numer_lokalu />
+      </adres>
+      <telefon>123456789</telefon>
+      <adres_email />
+   </klient>
+   <towar>
+      <nr_dokumentu>000001</nr_dokumentu>
+      <nazwa>A3</nazwa>
+      <powod_zwrotu>1</powod_zwrotu>
+      <cena>123</cena>
+	  <ilosc>9</ilosc>
+   </towar>
+   <dane_zwrot>
+      <nr_rachunku>123456</nr_rachunku>
+      <imie>Jan Nowak</imie>
+      <nazwisko />
+      <adres>
+         <miasto />
+         <ulica />
+         <numer_domu />
+         <numer_lokalu />
+      </adres>
+      <data>2000-12-23</data>
+   </dane_zwrot>
+</formularz>

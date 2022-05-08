@@ -1,0 +1,191 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="formularz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="klient">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element  name="imie">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-ZŁŻŹżźćąśęół ]+"/>
+                    <xs:maxLength value="50"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element  name="nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-ZZŁŻŹżźćąśęół ]+"/>
+                    <xs:maxLength value="50"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adres">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element  name="miasto">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:string">
+                           <xs:pattern value="[a-zA-ZŁŻŹżźćąśęół ]+"/>
+                           <xs:maxLength value="50"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ulica">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:string">
+                           <xs:pattern value="[a-zA-ZŁŻŹżźćąśęół ]+"/>
+                           <xs:maxLength value="50"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="numer_domu">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:int">
+                          <xs:pattern value="[0-9A-Za-z]{1,4}"/>
+                          <xs:minExclusive value="1"></xs:minExclusive>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element  name="numer_lokalu">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:int">
+                          <xs:pattern value="[0-9]{1,4}"/>
+                          <xs:minExclusive value="1"></xs:minExclusive>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element  name="telefon">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:int">
+                    <xs:pattern value="[0-9]{9}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element  name="adres_email">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-Z0-9]+@+gmail.com"/>
+                    <xs:maxLength value="100"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="towar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element  name="nr_paragonu">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-Z0-9]+"/>
+                    <xs:maxLength value="20"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="waga">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:float">
+                    <xs:minExclusive value="0.001"></xs:minExclusive>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              
+              <xs:element name="nazwa">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-Z0-9]+"/>
+                    <xs:maxLength value="20"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="powod_zwrotu">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-Z0-9 ]+"></xs:pattern>
+                    <xs:maxLength value="100"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element  name="cena">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:float">
+                    <xs:minExclusive value="0.01"></xs:minExclusive>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>   
+              <xs:element  name="ilosc">
+                 <xs:simpleType>
+                   <xs:restriction base = "xs:int">
+                     <xs:minExclusive value="1"></xs:minExclusive>
+                   </xs:restriction>
+                 </xs:simpleType>
+              </xs:element>   
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dane_zwrot">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element  name="nr_zwrotu">
+                <xs:simpleType>
+                  <xs:restriction base = "xs:string">
+                    <xs:pattern value="[a-zA-Z0-9]+"/>
+                    <xs:maxLength value="20"/>
+                    <xs:minLength value="5"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element type="xs:string" name="imie"/>
+              <xs:element type="xs:string" name="nazwisko"/>
+              <xs:element name="adres">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element  name="miasto">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:string">
+                           <xs:pattern value="[a-zA-ZŁŻŹżźćąśęół ]{1,20}"/>
+                           <xs:maxLength value="50"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ulica">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:string">
+                           <xs:pattern value="[a-zA-ZŁŻŹżźćąśęół ]+"/>
+                           <xs:maxLength value="50"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="numer_domu">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:int">
+                          <xs:pattern value="[0-9A-Za-z]{1,4}"/>
+                          <xs:minExclusive value="1"></xs:minExclusive>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element  name="numer_lokalu">
+                      <xs:simpleType>
+                        <xs:restriction base = "xs:int">
+                          <xs:pattern value="[0-9]{1,4}"/>
+                          <xs:minExclusive value="1"></xs:minExclusive>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:date" name="data"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
